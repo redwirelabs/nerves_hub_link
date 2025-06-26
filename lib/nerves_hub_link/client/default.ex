@@ -21,6 +21,11 @@ defmodule NervesHubLink.Client.Default do
   require Logger
 
   @impl NervesHubLink.Client
+  def connected do
+    :ok
+  end
+
+  @impl NervesHubLink.Client
   def update_available(update_info) do
     if update_info.firmware_meta.uuid == KV.get_active("nerves_fw_uuid") do
       Logger.info("""

@@ -20,6 +20,10 @@ defmodule NervesHubLink.Client.DefaultTest do
     firmware_meta: %FirmwareMetadata{}
   }
 
+  test "connected/0" do
+    assert Default.connected() == :ok
+  end
+
   test "update_available/1" do
     assert Default.update_available(@update_info) == :apply
   end
